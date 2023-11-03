@@ -1,6 +1,5 @@
 package com.example.weatherapp;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -16,7 +15,7 @@ public class ControllerXml {
     private Text weatherText;
 
     @FXML
-    void getWeatherData(ActionEvent event) throws IOException {
+    void getWeatherData() throws IOException {
 
         JSONObject weather =  new JSONObject(AdapterXmltoJSon.fetchWeather(getWoeid()));
         weatherText.setText("Current temperature: " + weather.getJSONObject("root").getJSONObject("current").getInt("temp_c") + "℃\n"
